@@ -71,21 +71,26 @@ cd Team-Ajinkya-SIH-Project
     <td><a href="https://github.com/kushal961">GitHub</a></td>
   </tr>
   <tr>
-    <td><b>Ajinkya</b></td>
+    <td><b>Harshad</b></td>
     <td><a href="#">GitHub</a></td>
   </tr>
   <tr>
-    <td><b>Member 3</b></td>
+    <td><b>Nupur</b></td>
     <td><a href="#">GitHub</a></td>
   </tr>
   <tr>
-    <td><b>Member 4</b></td>
+    <td><b>Divya</b></td>
     <td><a href="#">GitHub</a></td>
   </tr>
   <tr>
-    <td><b>Member 5</b></td>
+    <td><b>Prathmesh</b></td>
     <td><a href="#">GitHub</a></td>
   </tr>
+<tr>
+    <td><b>Sujal</b></td>
+    <td><a href="#">GitHub</a></td>
+  </tr>
+  
 </table>
 
 
