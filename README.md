@@ -61,26 +61,16 @@ cd Team-Ajinkya-SIH-Project
 ### **4️⃣ Run the Project**  
 - Open your browser and visit:  
   🔗 `http://localhost/Team-Ajinkya-SIH-Project/`
-<html>
-  <body>
-<th>
-  <tr>
-    
-  </tr>
-</th>
 
-<th>
-  <tr>
-    
-  </tr>
-</th>
-<th>
-  <tr>
-    
-  </tr>
-</th>
-</body>
-</html>
+## 👥 My Team  
+| Name          | GitHub Profile                         |
+|---------------|
+| Kushal        | [GitHub](https://github.com/kushal961) |
+| Ajinkya       | [GitHub](#) |
+| Team Member 3 | [GitHub](#) |
+| Team Member 4 | [GitHub](#) |
+
+
 
 
 
