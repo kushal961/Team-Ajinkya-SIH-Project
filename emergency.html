@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Services</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind for styling -->
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg p-4">
+        <a href="index.html" class="text-blue-600 font-semibold text-lg">⬅ Back to Home</a>
+    </nav>
+
+    <!-- Emergency Services Section -->
+    <section class="py-16 px-6 text-center">
+        <h2 class="text-4xl font-semibold mb-6">Emergency Services</h2>
+        <p class="text-lg text-gray-700 mb-6">
+            Locate nearby hospitals and book ambulances instantly.
+        </p>
+        
+        <button id="findHospitals" class="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-all">
+            Find Nearby Hospitals
+        </button>
+
+        <div id="hospitalList" class="mt-8 text-left max-w-3xl mx-auto"></div>
+
+        <h3 class="text-2xl font-bold mt-10">Emergency Helplines</h3>
+        <p class="text-lg mt-2">🚑 Ambulance: <strong>102</strong></p>
+        <p class="text-lg">📞 Emergency Helpline: <strong>112</strong></p>
+    </section>
+
+    <script>
+    document.getElementById("findHospitals").addEventListener("click", () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showHospitals, showError);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    });
+
+    function showHospitals(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const apiKey = "YOUR_GOOGLE_MAPS_API_KEY";  // Replace with your API Key
+        const radius = 5000;  // 5 km radius
+        const hospitalList = document.getElementById("hospitalList");
+
+        hospitalList.innerHTML = "<p>Fetching nearby hospitals...</p>";
+
+        fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=${radius}&type=hospital&key=${apiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                hospitalList.innerHTML = "";
+                if (data.results.length > 0) {
+                    data.results.forEach(hospital => {
+                        hospitalList.innerHTML += `
+                            <div class="bg-white p-4 shadow-lg rounded-lg mb-4">
+                                <h3 class="text-xl font-semibold">${hospital.name}</h3>
+                                <p class="text-gray-600">${hospital.vicinity}</p>
+                                <a href="tel:${hospital.formatted_phone_number || '#'}" class="text-blue-600 underline">Call Now</a>
+                            </div>
+                        `;
+                    });
+                } else {
+                    hospitalList.innerHTML = "<p>No hospitals found nearby.</p>";
+                }
+            })
+            .catch(error => {
+                hospitalList.innerHTML = "<p>Unable to fetch hospital data.</p>";
+                console.error("Error fetching hospitals:", error);
+            });
+    }
+
+    function showError(error) {
+        let message = "Location error: ";
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                message += "User denied location access.";
+                break;
+            case error.POSITION_UNAVAILABLE:
+                message += "Location information unavailable.";
+                break;
+            case error.TIMEOUT:
+                message += "Location request timed out.";
+                break;
+            default:
+                message += "Unknown error.";
+                break;
+        }
+        alert(message);
+    }
+    </script>
+</body>
+</html>

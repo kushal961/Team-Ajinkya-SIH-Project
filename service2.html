@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Name - Healthcare+</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-00">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="bg-blue-200 shadow-md fixed top-0 left-0 w-full z-50 py-4 transition-transform duration-300">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <a href="#" class="text-2xl font-bold text-blue-600 hover:text-purple-600 transition">HealthCare+</a>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#features" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition">Features</a></li>
+                <li><a href="#about" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition">About</a></li>
+                <li><a href="#testimonials" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition">Testimonials</a></li>
+                <li><a href="#contact" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition">Contact</a></li>
+            </ul>
+            <a href="login.html" class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Login</a>
+        </div>
+    </nav>
+
+    <section class="w-full px-9 mt-24 py-16 flex flex-col md:flex-row items-center bg-white">
+        <!-- Left Side: Heading & Description -->
+        <div class="w-full md:w-2/2 text-black">
+            <h1 class="text-5xl font-bold">Find & Book Doctors</h1>
+            <p class="mt-4 text-lg max-w-2xl text-justify leading-relaxed">
+                In times of crisis, immediate response is crucial. Our Emergency Services are designed to provide fast, reliable, and efficient assistance whenever you need it the most. Whether it's medical emergencies, fire incidents, security threats, or disaster relief, our team is available 24/7 to ensure your safety and well-being. With state-of-the-art technology and a highly trained support team, we offer rapid response solutions, real-time assistance, and emergency coordination to handle any situation effectively. Your safety is our priority, and we are committed to delivering prompt and professional emergency support when it matters most. 🚑🚒🚓
+            </p>
+        </div>
+    
+        <!-- Right Side: Illustration -->
+        <div class="w-full md:w-3/2 flex justify-center mt-9 md:mt-0 ">
+            <img src="3727319.jpg" alt="Service Illustration" class="w-9/4 h-auto rounded-lg bg-blue-300">
+        </div>
+    </section>
+    
+
+  <!-- ⚙️ "How It Works" Section with Circular Top -->
+<section class="relative bg-gradient-to-r from-teal-500 to-cyan-500 text-white pt-20 pb-16 -mt-16">
+    
+    <!-- Circular Top Background -->
+    <svg class="absolute top-0 left-0 w-full" viewBox="0 0 1440 320">
+        <path fill="white" fill-opacity="1"
+            d="M0,160L80,144C160,128,320,96,480,106.7C640,117,800,171,960,181.3C1120,192,1280,160,1360,144L1440,128V0H0Z">
+        </path>
+    </svg>
+
+    <div class="container mx-auto px-6 py-16 relative z-10 flex flex-col md:flex-row items-center">
+        <!-- Left Side: Steps in Boxes -->
+        <div class="w-full md:w-1/2 space-y-6">
+            <h2 class="text-3xl font-semibold">How It Works</h2>
+            <div class="space-y-4">
+                <div class="flex items-start bg-white p-4 rounded-lg shadow-md hover:bg-gray-100 transition text-gray-800">
+                    <span class="text-teal-600 text-2xl font-bold mr-4">1.</span>
+                    <p class="text-lg">Sign up and create your patient profile with basic health details.</p>
+                </div>
+                <div class="flex items-start bg-white p-4 rounded-lg shadow-md hover:bg-gray-100 transition text-gray-800">
+                    <span class="text-teal-600 text-2xl font-bold mr-4">2.</span>
+                    <p class="text-lg">Choose a service, book an appointment, or consult a doctor online.</p>
+                </div>
+                <div class="flex items-start bg-white p-4 rounded-lg shadow-md hover:bg-gray-100 transition text-gray-800">
+                    <span class="text-teal-600 text-2xl font-bold mr-4">3.</span>
+                    <p class="text-lg">Get medical advice, prescriptions, and track your health progress.</p>
+                </div>
+            </div>
+
+
+
+            
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center mt-8 md:mt-8 relative">
+            <!-- Monitor Image -->
+            <img src="8357605-removebg-preview.png" alt="Service Illustration"
+                class="w-2/3 h-auto rounded-lg md:mt-4">
+        </div>
+        
+        
+        
+</section>
+
+    
+
+
+<!-- FAQs Section -->
+<section class="w-full max-w-4xl mx-auto mt-16 p-6">
+    <h2 class="text-3xl font-bold text-center mb-6 relative">
+        Frequently Asked Questions
+        <span class="block w-16 h-1 bg-blue-500 mx-auto mt-2"></span>
+    </h2>
+
+    <div x-data="{ openFaq: null }" class="space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="border-b border-gray-300 pb-4 relative">
+            <button class="w-full text-left font-medium text-lg flex justify-between items-center p-4 bg-gray-100 rounded-lg" 
+                @click="openFaq === 1 ? openFaq = null : openFaq = 1">
+                What services do you offer?
+                <span :class="openFaq === 1 ? 'rotate-180' : ''" class="transition-transform">&#9660;</span>
+            </button>
+            <p x-show="openFaq === 1" x-collapse class="mt-2 text-gray-600 px-4">
+                We offer web development, digital marketing, UI/UX design, and branding services.
+            </p>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="border-b border-gray-300 pb-4 relative">
+            <button class="w-full text-left font-medium text-lg flex justify-between items-center p-4 bg-gray-100 rounded-lg" 
+                @click="openFaq === 2 ? openFaq = null : openFaq = 2">
+                How can I contact you?
+                <span :class="openFaq === 2 ? 'rotate-180' : ''" class="transition-transform">&#9660;</span>
+            </button>
+            <p x-show="openFaq === 2" x-collapse class="mt-2 text-gray-600 px-4">
+                You can contact us via email, phone, or our website's contact form.
+            </p>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="border-b border-gray-300 pb-4 relative">
+            <button class="w-full text-left font-medium text-lg flex justify-between items-center p-4 bg-gray-100 rounded-lg" 
+                @click="openFaq === 3 ? openFaq = null : openFaq = 3">
+                Do you provide custom solutions?
+                <span :class="openFaq === 3 ? 'rotate-180' : ''" class="transition-transform">&#9660;</span>
+            </button>
+            <p x-show="openFaq === 3" x-collapse class="mt-2 text-gray-600 px-4">
+                Yes! We tailor our services to meet your specific business needs.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Alpine.js for FAQ Accordion -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+
+
+    
+    <!-- Footer -->
+    <footer class="text-center p-6 text-gray-600">
+        <p>&copy; 2025 Healthcare Platform. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+
+</body>
+</html>

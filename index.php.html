@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollmagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollmagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-100">
+    <nav id="navbar" class="bg-blue-200 shadow-md fixed top-0 left-0 w-full z-50 py-4 transition-transform duration-300">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <a href="#" class="text-2xl font-bold text-blue-600 hover:text-purple-600 transition">HealthCare+</a>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#features" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition">Features</a></li>
+                <li><a href="#about" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition">About</a></li>
+                <li><a href="#testimonials" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition">Testimonials</a></li>
+                <li><a href="#contact" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition">Contact</a></li>
+            </ul>
+            <a href="login.html" class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Login</a>
+        </div>
+    </nav>
+    
+    
+<!-- Hero Section -->
+<section class="h-screen flex flex-col md:flex-row items-center justify-between px-6 pt-20 bg-white">
+    <div class="text-blue-700 w-full md:w-1/2">
+        <h1 class="text-6xl font-bold uppercase text-blue-400 mb-6 leading-tight animate-fade-in">Comprehensive Healthcare, Anytime, Anywhere</h1>
+        <p class="text-lg text-gray-700 mb-6 text-justify leading-relaxed">
+            Your health is our priority. With our all-in-one platform, you can easily access quality healthcare services, book appointments, consult doctors, and manage your medical records securely. Stay informed and take control of your well-being effortlessly.
+        </p>
+        <a href="login.html" class="bg-black text-white px-6 py-3 rounded-lg shadow-lg text-lg font-medium hover:scale-105 transition-all duration-300">Get Started</a>
+    </div>
+    <div class="w-full md:w-1/2 flex justify-center">
+        <img src="2203_w037_n003_236a_p1_236.jpg" alt="Healthcare Illustration" class="w-full max-w-lg h-auto animate-fade-in opacity-90">
+    </div>
+</section>
+
+    
+    <!-- Features Section -->
+    <section id="features" class="py-16 px-6 text-center">
+        <h2 class="text-4xl font-semibold mb-8">Our Key Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105 feature-box">
+                <img src="calendar_16060019.gif" alt="Doctor" class="w-16 mb-4">
+                <h3 class="text-xl font-bold">Find & Book Doctors</h3>
+                <p>Connect with top doctors and schedule appointments with ease.</p>
+                <a href="login.php" class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Book Now</a>
+            </div>
+            <div class="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105 feature-box">
+                <img src="ambulance_13099830.gif" alt="Ambulance" class="w-16 mb-4">
+                <h3 class="text-xl font-bold">Emergency Services</h3>
+                <p>Locate nearby hospitals and book ambulances instantly.</p>
+            </div>
+            <div class="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105 feature-box">
+                <img src="public-relations_17905615.gif" alt="Community" class="w-16 mb-4">
+                <h3 class="text-xl font-bold">Community Support</h3>
+                <p>Join discussions and seek advice from experts and patients.</p>
+            </div>
+            <div class="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105 feature-box">
+                <img src="optimism_18561144.gif" alt="Mental Health" class="w-16 mb-4">
+                <h3 class="text-xl font-bold">Mental Health Support</h3>
+                <p>Access therapists and resources for mental well-being.</p>
+            </div>
+            <div class="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition transform hover:scale-105 feature-box">
+                <img src="turing-test_10971776.gif" alt="Chatbot" class="w-16 mb-4">
+                <h3 class="text-xl font-bold">AI Symptom Checker</h3>
+                <p>Get AI-driven insights for early symptom detection.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-200 text-center">
+        <h2 class="text-4xl font-semibold mb-8">What Our Users Say</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="p-6 bg-red-100 shadow-lg rounded-lg mb-6   hover:bg-red-300 ">
+                <p class="italic">“This platform made booking doctor appointments so easy! Highly recommended.”</p>
+                <h3 class="mt-4 font-bold">- Jane Doe</h3>
+            </div>
+            <div class="p-6 bg-blue-100 shadow-lg rounded-lg   hover:bg-blue-300 ">
+                <p class="italic">“The community support feature helped me connect with others facing similar health challenges.”</p>
+                <h3 class="mt-4 font-bold">- John Smith</h3>
+            </div><br>
+
+            <div class="p-6 bg-green-100 shadow-lg rounded-lg   hover:bg-green-300 ">
+                <p class="italic">“The community support feature helped me connect with others facing similar health challenges.”</p>
+                <h3 class="mt-4 font-bold">- John Smith</h3>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="text-center p-6 text-gray-600">
+        <p>&copy; 2025 Healthcare Platform. All rights reserved.</p>
+
+
+        
+    </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.getElementById("navbar");
+        
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.scrollY || document.documentElement.scrollTop;
+        
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                navbar.style.transform = "translateY(-100%)";
+            } else {
+                // Scrolling up
+                navbar.style.transform = "translateY(0)";
+            }
+            lastScrollTop = scrollTop;
+        });
+        </script>
+        
+
+</body>
+</html>
+
+

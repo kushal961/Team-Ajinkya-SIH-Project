@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Pet Tracker</title>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Chart.js for Mood Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .pet-container {
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .mood-journal {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .progress-bar {
+            height: 10px;
+            border-radius: 5px;
+            background-color: #d1d5db;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            transition: width 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-green-200 via-blue-300 to-purple-400 text-gray-900">
+
+    <!-- 🔹 Hero Section -->
+    <section class="text-center py-12 px-6">
+        <h1 class="text-5xl font-bold text-indigo-700 mb-4">Meet Your Mood Pet! 🐶</h1>
+        <p class="text-lg text-gray-900 mb-9">Your pet changes based on your mood. Keep it happy! 😊</p>
+    </section>
+
+    <!-- 🔹 Mood Pet Display -->
+    <section class="container mx-auto text-center">
+        <div class="pet-container inline-block p-6 bg-white rounded-lg shadow-lg transform transition-all hover:scale-110">
+            <img id="mood-pet" src="https://i.imgur.com/hz2hTGR.png" class="w-40 mx-auto">
+            <p id="pet-message" class="mt-4 text-lg font-semibold text-gray-700">How are you feeling today?</p>
+        </div>
+    </section>
+
+    <!-- 🔹 Mood Selection -->
+    <section class="container mx-auto py-8 text-center">
+        <h2 class="text-2xl font-semibold text-purple-700 mb-4">Select Your Mood</h2>
+        <div class="flex justify-center space-x-6">
+            <button class="mood-btn bg-green-400 hover:bg-green-500 text-gray-1200 px-8 py-4 rounded-full transition-all duration-300"
+                data-mood="Happy">😊 Happy</button>
+            <button class="mood-btn bg-yellow-400 hover:bg-yellow-500 text-gray-1200 px-8 py-4 rounded-full transition-all duration-300"
+                data-mood="Neutral">😐 Neutral</button>
+            <button class="mood-btn bg-red-400 hover:bg-red-500 text-gray-1200 px-8 py-4 rounded-full transition-all duration-300"
+                data-mood="Sad">😢 Sad</button>
+        </div>
+    </section>
+
+    <!-- 🔹 Mental Health Questionnaire -->
+    <section class="container mx-auto py-8 text-center">
+        <h2 class="text-2xl font-semibold text-pink-700 mb-4">Mental Health Questionnaire</h2>
+        <div class="text-left max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+            <p class="text-lg font-semibold text-gray-700 mb-4">How are you feeling mentally today?</p>
+            <form id="mental-health-form">
+                <label for="stress-level" class="block text-gray-700 mb-2">On a scale of 1-10, how stressed are you?</label>
+                <input type="range" id="stress-level" name="stress-level" min="1" max="10" value="5"
+                    class="w-full mb-4">
+                <label for="sleep-quality" class="block text-gray-700 mb-2">How would you rate your sleep quality?</label>
+                <input type="range" id="sleep-quality" name="sleep-quality" min="1" max="10" value="5"
+                    class="w-full mb-4">
+                <label for="mood-rating" class="block text-gray-700 mb-2">How is your overall mood?</label>
+                <input type="range" id="mood-rating" name="mood-rating" min="1" max="10" value="5" class="w-full mb-4">
+                <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-3 rounded-full transition-all duration-300">Submit</button>
+            </form>
+        </div>
+        <div id="mental-health-result" class="mt-6 text-lg text-gray-700 hidden"></div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    
+    <!-- 🔹 Mood Journal & Streak Counter -->
+    <section class="container mx-auto py-8 text-center">
+        <h2 class="text-2xl font-semibold text-blue-700 mb-4">Your Mood Journal</h2>
+        <p id="streak-counter" class="text-lg text-green-700 font-bold">Mood Streak: 0 Days 🔥</p>
+        <div class="mood-journal bg-white p-4 rounded-lg shadow-md mt-4 text-left max-w-md mx-auto">
+            <ul id="mood-history"></ul>
+        </div>
+    </section>
+
+
+
+ <!-- 🔹 YouTube Stress-Relief Videos -->
+ <section class="container mx-auto py-12 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-6 text-purple-700">Relaxing Stress-Relief Videos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/B9gSzm387lE?si=zC25bqDJPEnEdwEN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/6C8sO_j-vuY?si=-ogP4CrSfb5ZYWg1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/j8_frTAzwZI?si=TKxxl3t9_CFAMx6B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/K6hD5CLfbbQ?si=LIV_EGR05Jw7Ksnm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</section>
+
+
+
+    <!-- 🔹 Mood Analytics (Improved Graph) -->
+    <section class="container mx-auto py-8 text-center">
+        <h2 class="text-2xl font-semibold text-pink-700 mb-4">Mood Trend</h2>
+        <canvas id="mood-chart"></canvas>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center p-6 text-gray-600">
+        <p>&copy; 2025 Mood Pet. Stay Happy! 😊</p>
+    </footer>
+
+    <script>
+        const petImg = document.getElementById("mood-pet");
+        const petMessage = document.getElementById("pet-message");
+        const moodButtons = document.querySelectorAll(".mood-btn");
+        const moodHistory = document.getElementById("mood-history");
+        const streakCounter = document.getElementById("streak-counter");
+        const moodChartCanvas = document.getElementById("mood-chart").getContext("2d");
+        const mentalHealthForm = document.getElementById("mental-health-form");
+        const mentalHealthResult = document.getElementById("mental-health-result");
+
+        let moodData = JSON.parse(localStorage.getItem("mood-tracker")) || {};
+        let streak = parseInt(localStorage.getItem("mood-streak")) || 0;
+
+        function updatePetMood(mood) {
+            let petStates = {
+                "Happy": { img: "https://i.imgur.com/hz2hTGR.png", message: "You're glowing with positivity! 🌞" },
+                "Neutral": { img: "https://i.imgur.com/Vwq3XU4.png", message: "Stay balanced, my friend! ⚖️" },
+                "Sad": { img: "https://i.imgur.com/KyQ3EYH.png", message: "Cheer up! I'm here for you. 💖" }
+            };
+
+            petImg.src = petStates[mood].img;
+            petMessage.innerText = petStates[mood].message;
+            document.querySelector(".pet-container").style.transform = "scale(1.1)";
+            setTimeout(() => {
+                document.querySelector(".pet-container").style.transform = "scale(1)";
+            }, 500);
+        }
+
+        function updateMoodChart() {
+            const dates = Object.keys(moodData).slice(-7);
+            const moods = dates.map(date => moodData[date]);
+
+            const moodValues = moods.map(mood => mood === "Happy" ? 3 : mood === "Neutral" ? 2 : 1);
+            const moodColors = moods.map(mood => mood === "Happy" ? "green" : mood === "Neutral" ? "yellow" : "red");
+
+            new Chart(moodChartCanvas, {
+                type: "line",
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: "Mood Trend",
+                        data: moodValues,
+                        borderColor: "blue",
+                        backgroundColor: "rgba(0, 0, 255, 0.1)",
+                        borderWidth: 3,
+                        pointBackgroundColor: moodColors,
+                        pointRadius: 6,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            suggestedMax: 3,
+                            ticks: { stepSize: 1, callback: val => ["", "😢 Sad", "😐 Neutral", "😊 Happy"][val] }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateMoodJournal() {
+            moodHistory.innerHTML = "";
+            Object.keys(moodData).slice(-7).reverse().forEach(date => {
+                const moodText = moodData[date];
+                moodHistory.innerHTML += `<li class="text-gray-700"><strong>${date}:</strong> ${moodText}</li>`;
+            });
+        }
+
+        moodButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const mood = this.dataset.mood;
+                const date = new Date().toLocaleDateString();
+
+                if (!moodData[date]) {
+                    streak++;
+                    localStorage.setItem("mood-streak", streak);
+                }
+
+                moodData[date] = mood;
+                localStorage.setItem("mood-tracker", JSON.stringify(moodData));
+
+                streakCounter.innerText = `Mood Streak: ${streak} Days 🔥`;
+
+                updatePetMood(mood);
+                updateMoodChart();
+                updateMoodJournal();
+            });
+        });
+
+        mentalHealthForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const stressLevel = parseInt(document.getElementById("stress-level").value);
+            const sleepQuality = parseInt(document.getElementById("sleep-quality").value);
+            const moodRating = parseInt(document.getElementById("mood-rating").value);
+
+            const totalScore = stressLevel + sleepQuality + moodRating;
+            const healthScore = totalScore / 30 * 100;
+
+            let healthStatus = '';
+            if (healthScore >= 70) {
+                healthStatus = "You're in great mental health! Keep it up! 🌟";
+            } else if (healthScore >= 40) {
+                healthStatus = "You might need to take it easy. Stay mindful of your mental health! 💡";
+            } else {
+                healthStatus = "It's okay to feel this way, but consider speaking with someone for support. 💬";
+            }
+
+            mentalHealthResult.innerText = `Your Mental Health Rating: ${healthScore}%\n${healthStatus}`;
+            mentalHealthResult.classList.remove('hidden');
+        });
+
+        updateMoodChart();
+        updateMoodJournal();
+        streakCounter.innerText = `Mood Streak: ${streak} Days 🔥`;
+
+        const lastMood = moodData[Object.keys(moodData).pop()];
+        if (lastMood) updatePetMood(lastMood);
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+

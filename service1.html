@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find & Book Doctors - Healthcare+</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="bg-blue-200 shadow-md fixed top-0 left-0 w-full z-50 py-4 transition-transform duration-300">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <a href="index.html" class="text-2xl font-bold text-blue-600 hover:text-purple-600 transition">HealthCare+</a>
+            <ul class="hidden md:flex space-x-6">
+                <!--<li><a href="#features" class="text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition">Features</a></li>
+                <li><a href="#about" class="text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition">About</a></li>
+                <li><a href="#testimonials" class="text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition">Testimonials</a></li>
+                <li><a href="#contact" class="text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition">Contact</a></li>
+            </ul>!-->
+            <!--<a href="login.php" class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Login</a>!-->
+        </div>
+    </nav>
+
+    <section class="w-full px-9 mt-24 py-16 flex flex-col md:flex-row items-center bg-white">
+        <div class="w-full md:w-2/2 text-black">
+            <h1 class="text-5xl font-bold">Find & Book Doctors</h1>
+            <p class="mt-4 text-lg max-w-2xl text-justify leading-relaxed">
+                Connect with top doctors for consultations and appointments. Our platform offers easy booking, health records management, and personalized medical care at your convenience.
+            </p>
+            <a href="login.php" class="mt-6 px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition inline-block">
+                Get Started
+              </a>
+              
+        </div>
+        <div class="w-full md:w-3/2 flex justify-center mt-9 md:mt-0">
+            <img src="3727319.jpg" alt="Doctors Appointment" class="w-9/4 h-auto rounded-lg bg-blue-300">
+        </div>
+    </section>
+
+    <section class="relative bg-gradient-to-r from-teal-500 to-cyan-500 text-white pt-20 pb-16 -mt-16">
+        <svg class="absolute top-0 left-0 w-full" viewBox="0 0 1440 320">
+            <path fill="white" d="M0,160L80,144C160,128,320,96,480,106.7C640,117,800,171,960,181.3C1120,192,1280,160,1360,144L1440,128V0H0Z"></path>
+        </svg>
+        <div class="container mx-auto px-6 py-16 relative z-10 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 space-y-6">
+                <h2 class="text-3xl font-semibold">How It Works</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start bg-white p-4 rounded-lg shadow-md text-gray-800">
+                        <span class="text-teal-600 text-2xl font-bold mr-4">1.</span>
+                        <p class="text-lg">Sign up, fill in your health details, and browse top doctors.</p>
+                    </div>
+                    <div class="flex items-start bg-white p-4 rounded-lg shadow-md text-gray-800">
+                        <span class="text-teal-600 text-2xl font-bold mr-4">2.</span>
+                        <p class="text-lg">Select your preferred doctor and book an appointment instantly.</p>
+                    </div>
+                    <div class="flex items-start bg-white p-4 rounded-lg shadow-md text-gray-800">
+                        <span class="text-teal-600 text-2xl font-bold mr-4">3.</span>
+                        <p class="text-lg">Receive consultation, prescriptions, and manage your records online.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 flex justify-center mt-8 md:mt-8">
+                <img src="8357605-removebg-preview.png" alt="Booking Process" class="w-2/3 h-auto rounded-lg">
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full max-w-4xl mx-auto mt-16 p-6">
+        <h2 class="text-3xl font-bold text-center mb-6 relative">
+            Frequently Asked Questions
+            <span class="block w-16 h-1 bg-blue-500 mx-auto mt-2"></span>
+        </h2>
+        <div x-data="{ openFaq: null }" class="space-y-4">
+            <div class="border-b border-gray-300 pb-4">
+                <button class="w-full text-left font-medium text-lg flex justify-between items-center p-4 bg-gray-100 rounded-lg" @click="openFaq === 1 ? openFaq = null : openFaq = 1">
+                    What services do you offer?
+                    <span :class="openFaq === 1 ? 'rotate-180' : ''" class="transition-transform">&#9660;</span>
+                </button>
+                <p x-show="openFaq === 1" class="mt-2 text-gray-600 px-4">We offer doctor consultations, appointment bookings, and health records management.</p>
+            </div>
+            <div class="border-b border-gray-300 pb-4">
+                <button class="w-full text-left font-medium text-lg flex justify-between items-center p-4 bg-gray-100 rounded-lg" @click="openFaq === 2 ? openFaq = null : openFaq = 2">
+                    How do I book an appointment?
+                    <span :class="openFaq === 2 ? 'rotate-180' : ''" class="transition-transform">&#9660;</span>
+                </button>
+                <p x-show="openFaq === 2" class="mt-2 text-gray-600 px-4">Simply sign up, select a doctor, and pick a suitable time slot to book your appointment.</p>
+            </div>
+        </div>
+    </section><br><br><br>
+
+    <footer class="text-center p-6 text-gray-600">
+        <p>&copy; 2025 Healthcare Platform. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+</body>
+</html>
+

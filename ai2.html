@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Symptom Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F9FDFB;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        form {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 500px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45A049;
+        }
+
+        .result, .confidence, .prevention, .recent-searches, .health-tips {
+            margin-top: 20px;
+            background-color: #FFFFFF;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .health-tips {
+            color: #2196F3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>AI Symptom Checker</h1>
+    <form method="POST" id="symptomForm">
+        <h3>Select Your Symptoms:</h3>
+        <label><input type="checkbox" name="symptoms[]" value="Fever"> Fever</label>
+        <label><input type="checkbox" name="symptoms[]" value="Cough"> Cough</label>
+        <label><input type="checkbox" name="symptoms[]" value="Headache"> Headache</label>
+        <label><input type="checkbox" name="symptoms[]" value="Sore Throat"> Sore Throat</label>
+        <label><input type="checkbox" name="symptoms[]" value="Fatigue"> Fatigue</label>
+        <label><input type="checkbox" name="symptoms[]" value="Body Pain"> Body Pain</label>
+        <label><input type="checkbox" name="symptoms[]" value="Nausea"> Nausea</label>
+        <br>
+        <input type="submit" value="Check Symptoms">
+    </form>
+
+    <div class="result" id="result" style="display:none;"></div>
+    <div class="confidence" id="confidence" style="display:none;"></div>
+    <div class="prevention" id="prevention" style="display:none;"></div>
+    <div class="recent-searches" id="recentSearches">
+        <h3>Recent Checks:</h3>
+        <ul id="recentList"></ul>
+    </div>
+    <div class="health-tips" id="healthTips">
+        <h3>Health Tips:</h3>
+        <p id="tipText">Stay hydrated and get plenty of rest!</p>
+    </div>
+
+    <script>
+        const healthTips = [
+            "Stay hydrated and get plenty of rest!",
+            "Wash your hands frequently to prevent infections.",
+            "Eat a balanced diet rich in fruits and vegetables.",
+            "Exercise regularly to strengthen your immune system.",
+            "Get regular medical check-ups."
+        ];
+
+        let tipIndex = 0;
+        setInterval(() => {
+            tipIndex = (tipIndex + 1) % healthTips.length;
+            document.getElementById('tipText').innerText = healthTips[tipIndex];
+        }, 5000);
+
+        document.getElementById('symptomForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const selectedSymptoms = Array.from(document.querySelectorAll('input[name="symptoms[]"]:checked')).map(cb => cb.value);
+
+            if (selectedSymptoms.length === 0) {
+                alert('Please select at least one symptom.');
+                return;
+            }
+
+            // Store in recent searches
+            let recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+            recentSearches.unshift(selectedSymptoms.join(", "));
+            recentSearches = recentSearches.slice(0, 5);
+            localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+            updateRecentSearches();
+
+            // Simulate prediction
+            const predictedDisease = "Flu"; // Placeholder
+            const confidence = "85%"; // Placeholder
+            const prevention = "Stay hydrated, rest, and consult a doctor if symptoms worsen.";
+
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('result').innerText = `Predicted Disease: ${predictedDisease}`;
+
+            document.getElementById('confidence').style.display = 'block';
+            document.getElementById('confidence').innerText = `Confidence Score: ${confidence}`;
+
+            document.getElementById('prevention').style.display = 'block';
+            document.getElementById('prevention').innerText = `Preventive Measures: ${prevention}`;
+        });
+
+        function updateRecentSearches() {
+            const recentList = document.getElementById('recentList');
+            recentList.innerHTML = '';
+            const searches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+            searches.forEach(search => {
+                const li = document.createElement('li');
+                li.textContent = search;
+                recentList.appendChild(li);
+            });
+        }
+
+        // Initialize recent searches on page load
+        window.onload = updateRecentSearches;
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .service-section {
+      padding: 60px 0;
+    }
+    .service-card {
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Service Hub</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#find-book-doctors">Find & Book Doctors</a></li>
+          <!-- Add more nav links for other services here -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="py-5 bg-primary text-white text-center">
+    <div class="container">
+      <h1>Welcome to Service Hub</h1>
+      <p>Your one-stop platform for all services.</p>
+    </div>
+  </header>
+
+  <!-- Find & Book Doctors Section -->
+  <section id="find-book-doctors" class="service-section">
+    <div class="container">
+      <h2 class="text-center mb-4">Find & Book Doctors</h2>
+      <form id="doctor-search-form" class="row g-3 mb-4">
+        <div class="col-md-5">
+          <input type="text" id="specialty" class="form-control" placeholder="Specialty">
+        </div>
+        <div class="col-md-5">
+          <input type="text" id="location" class="form-control" placeholder="Location">
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary w-100">Search</button>
+        </div>
+      </form>
+      <div id="doctor-results" class="row">
+        <!-- Doctor cards will be displayed here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Service Sections -->
+  <!-- Add more service sections here -->
+
+  <!-- Footer -->
+  <footer class="py-4 bg-dark text-white text-center">
+    <div class="container">
+      <p>&copy; 2025 Service Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('doctor-search-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const specialty = document.getElementById('specialty').value;
+      const location = document.getElementById('location').value;
+
+      fetch(`fetch_doctors.php?specialty=${specialty}&location=${location}`)
+        .then(response => response.json())
+        .then(data => {
+          const resultsContainer = document.getElementById('doctor-results');
+          resultsContainer.innerHTML = '';
+          if (data.length > 0)
+::contentReference[oaicite:0]{index=0}
+ 
+
+ 
