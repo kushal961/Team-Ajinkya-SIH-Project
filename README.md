@@ -64,32 +64,32 @@ cd Team-Ajinkya-SIH-Project
 <table>
   <tr>
     <th>Name</th>
-    <th>Role</th>
+   
     <th>GitHub Profile</th>
   </tr>
   <tr>
     <td><b>Kushal</b></td>
-    <td>Project Lead & Full-Stack Developer</td>
+    
     <td><a href="https://github.com/kushal961">GitHub</a></td>
   </tr>
   <tr>
     <td><b>Ajinkya</b></td>
-    <td>Backend Developer</td>
+
     <td><a href="#">GitHub</a></td>
   </tr>
   <tr>
     <td><b>Member 3</b></td>
-    <td>Frontend Developer</td>
+    
     <td><a href="#">GitHub</a></td>
   </tr>
   <tr>
     <td><b>Member 4</b></td>
-    <td>AI & Chatbot Specialist</td>
+    
     <td><a href="#">GitHub</a></td>
   </tr>
   <tr>
     <td><b>Member 5</b></td>
-    <td>UI/UX Designer</td>
+
     <td><a href="#">GitHub</a></td>
   </tr>
 </table>
