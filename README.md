@@ -62,7 +62,16 @@ cd Team-Ajinkya-SIH-Project
 
 ### **4️⃣ Run the Project**  
 - Open your browser and visit:  
-  🔗 `http://localhost/Team-Ajinkya-SIH-Project/`  
+  🔗 `http://localhost/Team-Ajinkya-SIH-Project/`
+
+
+  | Name         | Role                 | GitHub Profile |
+|-------------|----------------------|---------------|
+| Kushal      | Project Lead & Developer | [GitHub](https://github.com/kushal961) |
+| Ajinkya     | Backend Developer     | [GitHub](#) |
+| Team Member 3 | UI/UX Designer       | [GitHub](#) |
+| Team Member 4 | AI & Chatbot Expert  | [GitHub](#) |
+
 
 ---
 
