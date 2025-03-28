@@ -72,7 +72,7 @@ cd Team-Ajinkya-SIH-Project
   </tr>
   <tr>
     <td><b>Harshad</b></td>
-    <td><a href="#">GitHub</a></td>
+    <td><a href="https://github.com/harshadSH ">GitHub</a></td>
   </tr>
   <tr>
     <td><b>Nupur</b></td>
@@ -80,15 +80,15 @@ cd Team-Ajinkya-SIH-Project
   </tr>
   <tr>
     <td><b>Divya</b></td>
-    <td><a href="#">GitHub</a></td>
+    <td><a href="https://github.com/DIWAYA">GitHub</a></td>
   </tr>
   <tr>
     <td><b>Prathmesh</b></td>
-    <td><a href="#">GitHub</a></td>
+    <td><a href="https://github.com/prathamesh3245">GitHub</a></td>
   </tr>
 <tr>
     <td><b>Sujal</b></td>
-    <td><a href="#">GitHub</a></td>
+    <td><a href="https://github.com/Sujalg34 ">GitHub</a></td>
   </tr>
   
 </table>
