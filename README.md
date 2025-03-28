@@ -61,7 +61,8 @@ cd Team-Ajinkya-SIH-Project
 ### **4️⃣ Run the Project**  
 - Open your browser and visit:  
   🔗 `http://localhost/Team-Ajinkya-SIH-Project/`
-
+<html>
+  <body>
 <th>
   <tr>
     
@@ -78,7 +79,8 @@ cd Team-Ajinkya-SIH-Project
     
   </tr>
 </th>
-
+</body>
+</html>
 
 
 
