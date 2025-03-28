@@ -29,9 +29,7 @@ Your health is our priority. With our all-in-one platform, you can easily access
 - AI-driven insights for early symptom detection.  
 - Helps in self-assessment and preliminary diagnosis.  
 
-### 🔒 **Secure Medical Record Management**  
-- Store and access medical history securely.  
-- Download prescriptions and reports anytime.  
+
 
 ---
 
@@ -64,13 +62,24 @@ cd Team-Ajinkya-SIH-Project
 - Open your browser and visit:  
   🔗 `http://localhost/Team-Ajinkya-SIH-Project/`
 
+<th>
+  <tr>
+    
+  </tr>
+</th>
 
-  | Name         | Role                 | GitHub Profile |
-|-------------|----------------------|---------------|
-| Kushal      | Project Lead & Developer | [GitHub](https://github.com/kushal961) |
-| Ajinkya     | Backend Developer     | [GitHub](#) |
-| Team Member 3 | UI/UX Designer       | [GitHub](#) |
-| Team Member 4 | AI & Chatbot Expert  | [GitHub](#) |
+<th>
+  <tr>
+    
+  </tr>
+</th>
+<th>
+  <tr>
+    
+  </tr>
+</th>
+
+
 
 
 ---
